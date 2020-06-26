@@ -176,11 +176,24 @@ class AdminController extends Controller
 
     public function hapusPemilih($id)
     {
-        
-        DB::table('users')->where('id',$id)->delete();
+       
+        User::deleteData($id);
+    
+        echo "Delete successfully";
+        exit;
 
-        return redirect('/admin/home');
+        // DB::table('users')->where('id',$id)->delete();
+
+        // return redirect('/admin/home');
     }
+
+    // public function deleteUser($id=0){
+    //     // Call deleteData() method of Page Model
+    //     User::deleteData($id);
+    
+    //     echo "Delete successfully";
+    //     exit;
+    //   }
 
 
 

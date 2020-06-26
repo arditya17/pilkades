@@ -34,7 +34,7 @@
               </div>
               <div class="row">
                 <div class="col-sm-12">
-                  <form action="/admin/pemilih/store" method="post"  enctype="multipart/form-data" class="form-user">
+                  <form action="/admin/pemilih/store" method="post"  enctype="multipart/form-data">
                     {{ csrf_field() }}
                     <div class="row">
                       <div class="col-md-6">
@@ -105,13 +105,8 @@
                       <b>File Gambar</b><br/>
                       <input type="file" name="file">
                     </div> -->
-                    <!-- <div class="modal-footer">
-                      <button class="btn btn-success" type="submit" value="upload"> Comfirm</button>
-                      <button type="reset" class="btn btn-danger" data-dismiss="modal" aria-hidden="true">Cancel</button>
-                    </div> -->
-
                     <div class="modal-footer">
-                      <button class="btn btn-success tombol-simpan" type="submit" value="upload"> Comfirm</button>
+                      <button class="btn btn-success" type="submit" value="upload"> Comfirm</button>
                       <button type="reset" class="btn btn-danger" data-dismiss="modal" aria-hidden="true">Cancel</button>
                     </div>
                   </form>

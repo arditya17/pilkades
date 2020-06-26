@@ -62,9 +62,9 @@
                         <td>
                           <a href="/admin/pemilih/edit/{{ $p->id }}" class="open_modal_ubah btn btn-sm btn-primary shadow-sm"><i class="fa fa-bars"></i>Edit</a>
                           <a href="/admin/pemilih/details/{{ $p->id }}" class="open_modal_ubah btn btn-sm btn-primary shadow-sm"><i class="fa fa-bars"></i>Details</a>
-                          <!-- <a href="#.'/admin/pemilih/hapus/{{ $p->id }}'." class="linkHapusUser btn btn-danger btn-sm delete-link"><i class="fa fa-trash"></i>Delete</a> -->
                           
-                          <a href="/admin/pemilih/hapus/{{ $p->id }}" class="btn btn-danger btn-sm delete-link"><i class="fa fa-trash"></i>Delete</a>
+                          <!-- <a href="/admin/pemilih/hapus/{{ $p->id }}" class="btn btn-danger btn-sm delete-link"><i class="fa fa-trash"></i>Delete</a> -->
+                          <input type='button' value='Delete' class='delete' data-id='"+id+"' >
                         </td>
                       </tr>
                       @endforeach
@@ -102,15 +102,24 @@
       <!-- /.row -->
     </section>
 
-<!-- <script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
-<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
-<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script> -->
+<script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<!-- <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script> --> -->
 
-<!-- <script type="text/javascript">
-  $(document).ready(function() {
-      $('#example2').DataTable();
-  } );
-</script> -->
+<script type="text/javascript">
+  $(document).on("click", ".delete" , function() {
+    var delete_id = $(this).data('id');
+    var el = this;
+    $.ajax({
+      url: "{{url('/admin/pemilih/hapus/')}}"+delete_id,
+      type: 'get',
+      success: function(response){
+        $(el).closest( "tr" ).remove();
+        alert(response);
+      }
+    });
+  });
+</script>
 
 @endsection
 
