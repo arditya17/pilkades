@@ -89,7 +89,7 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="../../index3.html" class="brand-link">
+    <a href="/admin/home" class="brand-link">
       <img src="/img/AdminLTELogo.png"
            alt="AdminLTE Logo"
            class="brand-image img-circle elevation-3"
@@ -114,56 +114,51 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-          <li class="nav-item">
-            <a href="\dashboard" class="nav-link active">
+          <li class="{{ Request::path() === 'admin/home' ? 'nav-item nav-link active' : ''}}">
+            <a href="/admin/home" class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
               </p>
             </a>
           </li>
-          <li class="nav-item">
-            <a href="/admin/tambah" class="nav-link">
+          <li class="{{ Request::path() === 'admin/tambah' ? 'nav-item nav-link active' : ''}}">
+            <a  href="/admin/tambah" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
                 Tambah Calon
-                <span class="right badge badge-danger">New</span>
               </p>
             </a>
           </li>
-          <li class="nav-item">
+          <li class="{{ Request::path() === 'admin/list' ? ' nav-item nav-link active' : ''}}">
             <a href="/admin/list" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
                 Daftar Calon
-                <span class="right badge badge-danger">New</span>
               </p>
             </a>
           </li>
-          <li class="nav-item">
+          <li class="{{ Request::path() === 'admin/kotak' ? ' nav-item nav-link active' : ''}}">
             <a href="/admin/kotak" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
                 Kotak Suara
-                <span class="right badge badge-danger">New</span>
               </p>
             </a>
           </li>
-          <li class="nav-item">
+          <li class="{{ Request::path() === 'admin/pemilih/tambah' ? ' nav-item nav-link active' : ''}}">
             <a href="/admin/pemilih/tambah" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
                 Tambah Pemilih
-                <span class="right badge badge-danger">New</span>
               </p>
             </a>
           </li>
-          <li class="nav-item">
+          <li class="{{ Request::path() === 'admin/pemilih/list' ? ' nav-item nav-link active' : ''}}">
             <a href="/admin/pemilih/list" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
                 List Pemilih
-                <span class="right badge badge-danger">New</span>
               </p>
             </a>
           </li>
@@ -235,6 +230,42 @@
 <script src="dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="dist/js/demo.js"></script>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<script type="text/javascript">
+        function loadMenu(url) {
+            $.ajax(url,{
+                type: 'GET',
+                success: function (data, status, xhr) {
+                    var objData = JSON.parse(data);
+
+                    $('#kontenTemplate').html(objData.konten);
+                    $('title').html(objData.titel);
+ 
+                }, 
+                error: function (jqXHR, textStatus, errorMsg){
+                    alert('Error : ' + errorMsg);
+                }
+            })  
+            
+        }
+    </script>
+=======
+<!-- <script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script> -->
+<script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<!-- <script type="text/javascript">
+  $(document).ready(function() {
+      $('#example2').DataTable();
+  } );
+</script> -->
+>>>>>>> e988f1d71056175d5fc08b82115019466c7a1426
+</body>
+
+<!-- insert ajax -->
+>>>>>>> vikhaha/master
 
 
 </body>

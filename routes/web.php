@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('landing');
 });
 
 Auth::routes();
@@ -36,6 +36,7 @@ Route::post('/admin/update', 'AdminController@update');
 //Pemilih
 Route::get('/admin/pemilih/tambah', 'AdminController@tambahPemilih')->middleware('is_admin');
 Route::post('/admin/pemilih/store', 'AdminController@updatePemilih');
+Route::post('/admin/pemilih/add', 'AdminController@store');
 Route::get('/admin/pemilih/list', 'AdminController@listPemilih')->middleware('is_admin');
 Route::get('/admin/pemilih/edit/{id}', 'AdminController@editPemilih')->middleware('is_admin');
 Route::get('/admin/pemilih/details/{id}', 'AdminController@detailsPemilih')->middleware('is_admin');

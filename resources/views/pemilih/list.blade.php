@@ -111,7 +111,7 @@
     var delete_id = $(this).data('id');
     var el = this;
     $.ajax({
-      url: "{{url('/admin/pemilih/hapus/')}}"+delete_id,
+      url: "{{url('/admin/pemilih/hapus/')}}"+ id,
       type: 'get',
       success: function(response){
         $(el).closest( "tr" ).remove();
