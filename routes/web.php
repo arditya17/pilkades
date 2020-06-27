@@ -38,7 +38,7 @@ Route::get('/admin/pemilih/tambah', 'AdminController@tambahPemilih')->middleware
 Route::post('/admin/pemilih/store', 'AdminController@updatePemilih');
 Route::post('/admin/pemilih/add', 'AdminController@store');
 Route::get('/admin/pemilih/list', 'AdminController@listPemilih')->middleware('is_admin');
-Route::get('/admin/pemilih/edit/{id}', 'AdminController@editPemilih')->middleware('is_admin');
+Route::get('/admin/pemilih/{id}/edit', 'AdminController@editPemilih')->middleware('is_admin');
 Route::get('/admin/pemilih/details/{id}', 'AdminController@detailsPemilih')->middleware('is_admin');
 Route::get('/admin/pemilih/hapus/{id}', 'AdminController@hapusPemilih')->middleware('is_admin');;
 

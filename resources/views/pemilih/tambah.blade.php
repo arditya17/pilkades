@@ -34,15 +34,14 @@
               </div>
               <div class="row">
                 <div class="col-sm-12">
-<<<<<<< HEAD
+
                   <form action="/admin/pemilih/store" method="post"  enctype="multipart/form-data">
-=======
-<<<<<<< HEAD
+
+
                   <form action="/admin/pemilih/add" method="post"  enctype="multipart/form-data">
-=======
+
                   <form action="/admin/pemilih/store" method="post"  enctype="multipart/form-data" class="form-user">
->>>>>>> e988f1d71056175d5fc08b82115019466c7a1426
->>>>>>> vikhaha/master
+
                     {{ csrf_field() }}
                     <div class="row">
                       <div class="col-md-6">
